@@ -1,0 +1,116 @@
+/* Page Background */
+body {
+  background-color: #f4f6f9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Section */
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.employee-header h2 {
+  margin: 0;
+}
+
+/* Add Button Right Side */
+.add-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-btn:hover {
+  background-color: #1e40af;
+}
+
+/* Search Input */
+.search-input {
+  width: 300px;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+}
+
+/* Table Styling */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.employee-table th {
+  background-color: #f1f5f9;
+  padding: 12px;
+  text-align: left;
+}
+
+.employee-table td {
+  padding: 10px 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.action-btn {
+  border: none;
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  /* background-color: #facc15; */
+  color: black;
+}
+
+.edit-btn:hover {
+  background-color: #f6e3ac;
+}
+
+
+.delete-btn {
+  /* background-color: #ef4444; */
+  color:rgb(21, 19, 19);
+}
+
+.delete-btn:hover {
+  background-color: #f1a9a9;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;   
+  justify-content: flex-start;
+}
+
+
+.action-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 70px;
+  transition: 0.2s ease;
+}
