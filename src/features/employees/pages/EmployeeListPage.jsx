@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchEmployees, deleteEmployee } from "../thunks/employeeThunks";
 import EmployeeTable from "../components/EmployeeTable";
+import { resetSearch } from "../employeeSlice";
 import "./EmployeeList.css";
 
 const EmployeePage = () => {
@@ -13,7 +14,9 @@ const EmployeePage = () => {
 
   useEffect(() => {
     dispatch(fetchEmployees());
+    dispatch(resetSearch());
   }, [dispatch]);
+  
 
   const handleAdd = () => {
     navigate("/employees/add");

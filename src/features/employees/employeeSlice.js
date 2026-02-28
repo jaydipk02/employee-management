@@ -19,7 +19,10 @@ const employeeSlice = createSlice({
   setSearchId: (state, action) => {
     state.searchId = action.payload;
   },
+   resetSearch: (state) => {
+    state.searchId = "";
 },
+  },
   extraReducers: (builder) => {
     builder
 
@@ -62,4 +65,4 @@ const employeeSlice = createSlice({
 });
 
 export default employeeSlice.reducer;
-export const { setSearchId } = employeeSlice.actions;
+export const { setSearchId , resetSearch } = employeeSlice.actions;
