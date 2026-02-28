@@ -6,8 +6,7 @@ export const selectEmployees = (state) =>
 export const selectSearchId = (state) =>
   state.employees?.searchId || '';
 
-export const selectFilteredEmployees = createSelector(
-  [selectEmployees, selectSearchId],
+export const selectFilteredEmployees = createSelector([selectEmployees, selectSearchId],
   (employees, searchId) => {
     if (!searchId) return employees;
     return employees.filter((emp) => String(emp.id).includes(searchId));

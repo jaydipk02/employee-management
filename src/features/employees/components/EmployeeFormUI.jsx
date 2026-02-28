@@ -34,9 +34,23 @@ const EmployeeForm = ({ initialData = {}, onSubmit, buttonText }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+     let updatedValue = value;
+
+  if (name === "name") {
+    updatedValue = value.replace(/[^A-Za-z ]/g, "");
+  }
+
+  if (name === "mobile") {
+    updatedValue = value.replace(/[^0-9]/g, "");
+  }
+   if (name === "email") {
+    updatedValue = value.trim(); 
+  }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: updatedValue,
     }));
   };
 
