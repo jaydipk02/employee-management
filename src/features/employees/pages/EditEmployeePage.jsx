@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateEmployee } from "../thunks/employeeThunks";
 import EmployeeForm from "../components/EmployeeFormUI";
 import { selectEmployeeById } from "../employeeSelectors";
+import { resetSearch } from "../employeeSlice";
+import Swal from "sweetalert2";
 
 const EditEmployee = () => {
   const { id } = useParams();
@@ -14,9 +16,26 @@ const EditEmployee = () => {
   const handleSubmit = async (data) => {
     try {
       await dispatch(updateEmployee({ id, employeeData: data })).unwrap();
-      navigate("/employees");
+
+      dispatch(resetSearch());
+
+      Swal.fire({
+        title: "Success!",
+        text: "Employee Updated Successfully!",
+        icon: "success",
+        confirmButtonText: "OK"
+      }).then(() => {
+        navigate("/employees");
+      });
+
     } catch (error) {
       console.log("Error updating employee", error);
+
+      Swal.fire({
+        title: "Error!",
+        text: "Failed to update employee",
+        icon: "error"
+      });
     }
   };
 

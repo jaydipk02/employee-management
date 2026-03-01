@@ -1,10 +1,11 @@
-/* Page Background */
+
 body {
   background-color: #f4f6f9;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  margin: 0;
 }
 
-/* Header Section */
 .employee-header {
   display: flex;
   justify-content: space-between;
@@ -16,7 +17,6 @@ body {
   margin: 0;
 }
 
-/* Add Button Right Side */
 .add-btn {
   background-color: #2563eb;
   color: white;
@@ -25,13 +25,13 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
+  transition: 0.2s ease;
 }
 
 .add-btn:hover {
   background-color: #1e40af;
 }
 
-/* Search Input */
 .search-input {
   width: 300px;
   padding: 8px 12px;
@@ -46,13 +46,19 @@ body {
   box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
 }
 
-/* Table Styling */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;  
+}
+
 .employee-table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
+  min-width: 600px; 
 }
 
 .employee-table th {
@@ -70,40 +76,11 @@ body {
   background-color: #f9fafb;
 }
 
-.action-btn {
-  border: none;
-  padding: 6px 12px;
-  margin-right: 6px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.edit-btn {
-  /* background-color: #facc15; */
-  color: black;
-}
-
-.edit-btn:hover {
-  background-color: #f6e3ac;
-}
-
-
-.delete-btn {
-  /* background-color: #ef4444; */
-  color:rgb(21, 19, 19);
-}
-
-.delete-btn:hover {
-  background-color: #f1a9a9;
-}
-
 .action-buttons {
   display: flex;
-  gap: 12px;   
+  gap: 12px;
   justify-content: flex-start;
 }
-
 
 .action-btn {
   border: none;
@@ -113,4 +90,56 @@ body {
   font-size: 14px;
   min-width: 70px;
   transition: 0.2s ease;
+}
+
+.edit-btn {
+  color: black;
+}
+
+.edit-btn:hover {
+  background-color: #f6e3ac;
+}
+
+.delete-btn {
+  color: rgb(21, 19, 19);
+}
+
+.delete-btn:hover {
+  background-color: #f1a9a9;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .employee-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .employee-table th,
+  .employee-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
 }

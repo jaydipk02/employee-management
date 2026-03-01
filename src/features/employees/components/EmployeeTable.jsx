@@ -44,57 +44,60 @@ const EmployeeTable = ({ onEdit }) => {
         className="search-input"
       />
 
-      <table className="employee-table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Country</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
+    
+      <div className="table-container">
+        <table className="employee-table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Country</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
 
-        <tbody>
-  {employees.length > 0 ? (
-    employees.map((emp) => (
-      <tr key={emp.id}>
-        <td>{emp.id}</td>
-        <td>{emp.name}</td>
-        <td>{emp.email}</td>
-        <td>{emp.mobile}</td>
-        <td>{emp.country}</td>
-        <td>
-         <div className="action-buttons">
-           <button
-            className="action-btn edit-btn"
-            onClick={() => onEdit(emp)}
-            title="Edit"
-          >
-            <FaEdit/>
-          </button>
+          <tbody>
+            {employees.length > 0 ? (
+              employees.map((emp) => (
+                <tr key={emp.id}>
+                  <td>{emp.id}</td>
+                  <td>{emp.name}</td>
+                  <td>{emp.email}</td>
+                  <td>{emp.mobile}</td>
+                  <td>{emp.country}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <button
+                        className="action-btn edit-btn"
+                        onClick={() => onEdit(emp)}
+                        title="Edit"
+                      >
+                        <FaEdit />
+                      </button>
 
-          <button
-            className="action-btn delete-btn"
-            onClick={() => handleDelete(emp.id)}
-            title="Delete"
-          >
-            <FaTrash/>
-          </button>
-         </div>
-        </td>
-      </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan="5" style={{ textAlign: "center" }}>
-        No Employees Found
-      </td>
-    </tr>
-  )}
-</tbody>
-      </table>
+                      <button
+                        className="action-btn delete-btn"
+                        onClick={() => handleDelete(emp.id)}
+                        title="Delete"
+                      >
+                        <FaTrash />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" style={{ textAlign: "center" }}>
+                  No Employees Found
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
 
       <ConfirmDialog
         isOpen={isDialogOpen}
